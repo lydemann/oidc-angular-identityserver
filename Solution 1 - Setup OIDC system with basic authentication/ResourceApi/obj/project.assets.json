@@ -13201,11 +13201,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\ResourceApi\\ResourceApi.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\Solution 1 - Setup OIDC system with basic authentication\\ResourceApi\\ResourceApi.csproj",
       "projectName": "ResourceApi",
-      "projectPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\ResourceApi\\ResourceApi.csproj",
+      "projectPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\Solution 1 - Setup OIDC system with basic authentication\\ResourceApi\\ResourceApi.csproj",
       "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\ResourceApi\\obj\\",
+      "outputPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\Solution 1 - Setup OIDC system with basic authentication\\ResourceApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

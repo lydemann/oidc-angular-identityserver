@@ -12,7 +12,6 @@ namespace ResourceApi.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            Console.WriteLine("Lalala");
             return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
         }
     }

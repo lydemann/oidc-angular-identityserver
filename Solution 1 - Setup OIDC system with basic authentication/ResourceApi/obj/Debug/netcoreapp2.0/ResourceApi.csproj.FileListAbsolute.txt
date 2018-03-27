@@ -20,3 +20,14 @@ C:\Users\chris\source\repos\oidc-angular-identityserver\ResourceApi\obj\Debug\ne
 C:\Users\chris\source\repos\oidc-angular-identityserver\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfo.cs
 C:\Users\chris\source\repos\oidc-angular-identityserver\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.dll
 C:\Users\chris\source\repos\oidc-angular-identityserver\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.deps.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.runtimeconfig.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.runtimeconfig.dev.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.csprojResolveAssemblyReference.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.csproj.CoreCompileInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfoInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfo.cs
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.pdb

@@ -12438,11 +12438,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\AuthorizationServer\\AuthorizationServer.csproj",
+      "projectUniqueName": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\Solution 1 - Setup OIDC system with basic authentication\\AuthorizationServer\\AuthorizationServer.csproj",
       "projectName": "AuthorizationServer",
-      "projectPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\AuthorizationServer\\AuthorizationServer.csproj",
+      "projectPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\Solution 1 - Setup OIDC system with basic authentication\\AuthorizationServer\\AuthorizationServer.csproj",
       "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\AuthorizationServer\\obj\\",
+      "outputPath": "C:\\Users\\chris\\Repos\\oidc-angular-identityserver\\Solution 1 - Setup OIDC system with basic authentication\\AuthorizationServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
