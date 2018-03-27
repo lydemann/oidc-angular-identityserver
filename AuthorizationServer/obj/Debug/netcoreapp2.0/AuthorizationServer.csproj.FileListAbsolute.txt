@@ -1,0 +1,11 @@
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.deps.json
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.json
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.dev.json
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
