@@ -1,7 +1,7 @@
 ﻿import { Injectable, OnInit, Inject } from "@angular/core";
 import { OidcSecurityService, OpenIDImplicitFlowConfiguration, AuthWellKnownEndpoints } from 'angular-auth-oidc-client';
 import { Observable } from "rxjs/Observable";
-import { Http } from "@angular/common/http";
+import { HttpHeaders, HttpClient } from "@angular/common/http";
 
 
 @Injectable()
@@ -9,7 +9,7 @@ export class AuthService implements OnInit {
 
     constructor(
         private oidcSecurityService: OidcSecurityService,
-        private http: Http,
+        private http: HttpClient,
         @Inject('ORIGIN_URL') originUrl: string,
         @Inject('AUTH_URL') authUrl: string,
     ) {

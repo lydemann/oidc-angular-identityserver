@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "test": "karma start ClientApp/test/karma.conf.js"
+    "test": "karma start ClientApp/test/karma.conf.js",
+    "build": "rimraf wwwroot/dist && webpack --config webpack.config.vendor.js && webpack"
   },
   "devDependencies": {
     "@ngtools/webpack": "^6.0.0-beta.7",
@@ -38,10 +39,11 @@
     "preboot": "4.5.2",
     "raw-loader": "0.5.1",
     "reflect-metadata": "0.1.10",
+    "rimraf": "^2.6.2",
     "rxjs": "5.4.2",
     "style-loader": "0.18.2",
     "to-string-loader": "1.1.5",
-    "typescript": "2.4.1",
+    "typescript": "^2.8.1",
     "url-loader": "0.5.9",
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.2",
@@ -53,6 +55,7 @@
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
     "@angular/compiler-cli": "^5.2.9",
+    "@angular/cli": "^1.7.3",
     "@angular/core": "^5.2.9",
     "@angular/forms": "^5.2.9",
     "@angular/http": "^5.2.9",
