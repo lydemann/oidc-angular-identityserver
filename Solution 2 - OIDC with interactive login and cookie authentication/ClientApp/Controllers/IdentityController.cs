@@ -20,9 +20,6 @@ namespace ClientApp.Controllers
             var userClaimsWithClientCredentials = await GetUserClaimsFromApiWithClientCredentials();
             userClaimsVM.UserClaimsWithClientCredentials = userClaimsWithClientCredentials.IsSuccessStatusCode ? await userClaimsWithClientCredentials.Content.ReadAsStringAsync() : userClaimsWithClientCredentials.StatusCode.ToString();
 
-            var userClaimswithAccessToken = await GetUserClaimsFromApiWithAccessToken();
-            userClaimsVM.UserClaimswithAccessToken = userClaimswithAccessToken.IsSuccessStatusCode ? await userClaimswithAccessToken.Content.ReadAsStringAsync() : userClaimswithAccessToken.StatusCode.ToString();
-
             return View(userClaimsVM);
         }
 
@@ -52,18 +49,6 @@ namespace ClientApp.Controllers
             // call api
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
-
-            var response = await client.GetAsync("http://localhost:5001/api/identity");
-            return response;
-        }
-
-        private async Task<HttpResponseMessage> GetUserClaimsFromApiWithAccessToken()
-        {
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
-
-            // call api
-            var client = new HttpClient();
-            client.SetBearerToken(accessToken);
 
             var response = await client.GetAsync("http://localhost:5001/api/identity");
             return response;

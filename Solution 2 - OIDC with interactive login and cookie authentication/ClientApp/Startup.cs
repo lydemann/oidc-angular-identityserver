@@ -33,8 +33,6 @@ namespace ClientApp
 
                     options.Authority = "http://localhost:5000";
                     options.RequireHttpsMetadata = false;
-                    options.ResponseType = "id_token token";
-                    options.Scope.Add("resourceApi");
                     options.ClientId = "mvc";
                     options.SaveTokens = true;
                 });

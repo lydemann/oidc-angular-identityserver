@@ -30,3 +30,4 @@ C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interact
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
