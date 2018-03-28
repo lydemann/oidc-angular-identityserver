@@ -1,0 +1,34 @@
+﻿@model ClientApp.Models.UserClaimsVM;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<dl>
+    <dt>
+        UserClaimsWithClientCredentials
+    </dt>
+    <dd>
+        @Model.UserClaimsWithClientCredentials
+    </dd>
+    <dt>
+        UserClaimsWithAccessToken
+    </dt>
+    <dd>
+        @Model.UserClaimsWithAccessToken
+    </dd>
+</dl>
+
+User claims:
+<dl>
+    @foreach (var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dd>@claim.Value</dd>
+    }
+</dl>
+
+<form asp-controller="Identity" asp-action="Logout" method="post">
+    <button type="submit">Logout</button>
+</form>
