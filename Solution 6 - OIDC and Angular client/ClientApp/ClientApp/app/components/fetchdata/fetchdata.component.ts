@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../core/auth.service';
 
 @Component({
     selector: 'fetchdata',
@@ -8,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class FetchDataComponent {
     public forecasts: WeatherForecast[] = [];
 
-    constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-        http.get(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
+    constructor(authService: AuthService, @Inject('API_URL') apiUrl: string) {
+        authService.get(apiUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
             this.forecasts = result as WeatherForecast[];
         }, error => console.error(error));
     }

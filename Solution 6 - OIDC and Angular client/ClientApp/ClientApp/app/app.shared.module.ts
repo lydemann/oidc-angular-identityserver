@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { AuthModule, OidcSecurityService } from 'angular-auth-oidc-client';
+import { AuthService } from './components/core/auth.service';
 
 @NgModule({
     declarations: [
@@ -21,6 +23,7 @@ import { UnauthorizedComponent } from './components/unauthorized/unauthorized.co
         HomeComponent
     ],
     imports: [
+        AuthModule.forRoot(),
         CommonModule,
         HttpClientModule,
         FormsModule,
@@ -32,6 +35,10 @@ import { UnauthorizedComponent } from './components/unauthorized/unauthorized.co
             { path: 'unauthorized', component: UnauthorizedComponent },
             { path: '**', redirectTo: 'home' }
         ])
+    ],
+    providers: [
+        AuthService,
+        OidcSecurityService
     ]
 })
 export class AppModuleShared {

@@ -1,11 +1,13 @@
-﻿import { Injectable, OnInit, Inject } from "@angular/core";
+﻿import { Injectable, OnInit, OnDestroy, Inject } from "@angular/core";
 import { OidcSecurityService, OpenIDImplicitFlowConfiguration, AuthWellKnownEndpoints } from 'angular-auth-oidc-client';
 import { Observable } from "rxjs/Observable";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
-
+import { Subscription } from "rxjs/Subscription";
 
 @Injectable()
-export class AuthService implements OnInit {
+export class AuthService implements OnInit, OnDestroy {
+
+    isAuthorized: boolean = false;
 
     constructor(
         private oidcSecurityService: OidcSecurityService,
@@ -38,7 +40,7 @@ export class AuthService implements OnInit {
         authWellKnownEndpoints.check_session_iframe = authUrl + '/connect/checksession';
         authWellKnownEndpoints.revocation_endpoint = authUrl + '/connect/revocation';
         authWellKnownEndpoints.introspection_endpoint = authUrl + '/connect/introspect';
-        // TODO: setup
+
         this.oidcSecurityService.setupModule(openIdImplicitFlowConfiguration, authWellKnownEndpoints);
 
         if (this.oidcSecurityService.moduleSetup) {
@@ -50,9 +52,18 @@ export class AuthService implements OnInit {
         }
     }
 
+    private isAuthorizedSubscription: Subscription = new Subscription;
     ngOnInit(): void {
-        throw new Error("Method not implemented.");
+        this.isAuthorizedSubscription = this.oidcSecurityService.getIsAuthorized().subscribe((isAuthorized => {
+            this.isAuthorized = isAuthorized;
+        }));
     }
+
+    ngOnDestroy(): void {
+        this.isAuthorizedSubscription.unsubscribe();
+        this.oidcSecurityService.onModuleSetup.unsubscribe();
+    }
+
 
     private doCallbackLogicIfRequired() {
         if (typeof location !== "undefined" && window.location.hash) {

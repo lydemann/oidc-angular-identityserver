@@ -1,11 +1,11 @@
 {
-  "name": "ClientApp",
+  "name": "clientapp",
   "private": true,
   "version": "0.0.0",
-  "scripts": {
-    "test": "karma start ClientApp/test/karma.conf.js",
-    "build": "rimraf wwwroot/dist && webpack --config webpack.config.vendor.js && webpack"
-  },
+    "scripts": {
+        "test": "karma start ClientApp/test/karma.conf.js",
+        "build": "rimraf wwwroot/dist && webpack --config webpack.config.vendor.js && webpack"
+    },
   "devDependencies": {
     "@ngtools/webpack": "^6.0.0-beta.7",
     "@types/chai": "4.0.1",
@@ -40,7 +40,6 @@
     "raw-loader": "0.5.1",
     "reflect-metadata": "0.1.10",
     "rimraf": "^2.6.2",
-    "rxjs": "5.4.2",
     "style-loader": "0.18.2",
     "to-string-loader": "1.1.5",
     "typescript": "^2.8.1",
@@ -63,6 +62,7 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
     "@angular/router": "^5.2.9",
-    "angular-auth-oidc-client": "^4.1.0"
+    "angular-auth-oidc-client": "^4.1.0",
+    "rxjs": "^5.5.2"
   }
 }
