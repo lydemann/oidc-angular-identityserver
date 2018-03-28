@@ -1,0 +1,44 @@
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.deps.json
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.json
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.dev.json
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\source\repos\oidc-angular-identityserver\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.deps.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.dev.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 1 - Setup OIDC system with basic authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.deps.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.dev.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 2 - OIDC with interactive login and cookie authentication\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.deps.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.dev.json
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 3 - OIDC with Hybrid flow and call api\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
