@@ -12,8 +12,8 @@ export class AuthService implements OnInit, OnDestroy {
     constructor(
         private oidcSecurityService: OidcSecurityService,
         private http: HttpClient,
-        @Inject('ORIGIN_URL') originUrl: string,
-        @Inject('AUTH_URL') authUrl: string,
+        @Inject('ORIGIN_URL') private originUrl: string,
+        @Inject('AUTH_URL') private authUrl: string,
     ) {
         const openIdImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
         openIdImplicitFlowConfiguration.stsServer = authUrl,
@@ -39,6 +39,7 @@ export class AuthService implements OnInit, OnDestroy {
         authWellKnownEndpoints.end_session_endpoint = authUrl + '/connect/endsession';
         authWellKnownEndpoints.check_session_iframe = authUrl + '/connect/checksession';
         authWellKnownEndpoints.revocation_endpoint = authUrl + '/connect/revocation';
+        authWellKnownEndpoints.introspection_endpoint = authUrl + '/connect/introspect';
         authWellKnownEndpoints.introspection_endpoint = authUrl + '/connect/introspect';
 
         this.oidcSecurityService.setupModule(openIdImplicitFlowConfiguration, authWellKnownEndpoints);
@@ -66,9 +67,23 @@ export class AuthService implements OnInit, OnDestroy {
 
 
     private doCallbackLogicIfRequired() {
-        if (typeof location !== "undefined" && window.location.hash) {
+        if (typeof location !== "undefined") {
             this.oidcSecurityService.authorizedCallback();
         }
+    }
+
+    getIsAuthorized(): Observable<boolean> {
+        return this.oidcSecurityService.getIsAuthorized();
+    }
+
+    login() {
+        console.log('start login');
+        this.oidcSecurityService.authorize();
+    }
+
+    logout() {
+        console.log('start logoff');
+        this.oidcSecurityService.logoff();
     }
 
     get(url: string): Observable<any> {
@@ -103,5 +118,4 @@ export class AuthService implements OnInit, OnDestroy {
         const tokenValue = 'Bearer ' + token;
         return headers.set('Authorization', tokenValue);
     }
-
 }

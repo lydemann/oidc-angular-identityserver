@@ -28,6 +28,16 @@ namespace ResourceApi
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "resourceApi";
                 });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins(Configuration["clientUrl"])
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +47,8 @@ namespace ResourceApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("default");
 
             app.UseAuthentication();
             app.UseMvc();

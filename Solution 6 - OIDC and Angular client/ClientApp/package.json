@@ -2,10 +2,10 @@
   "name": "clientapp",
   "private": true,
   "version": "0.0.0",
-    "scripts": {
-        "test": "karma start ClientApp/test/karma.conf.js",
-        "build": "rimraf wwwroot/dist && webpack --config webpack.config.vendor.js && webpack"
-    },
+  "scripts": {
+    "test": "karma start ClientApp/test/karma.conf.js",
+    "build": "rimraf wwwroot/dist && webpack --config webpack.config.vendor.js && webpack"
+  },
   "devDependencies": {
     "@ngtools/webpack": "^6.0.0-beta.7",
     "@types/chai": "4.0.1",
