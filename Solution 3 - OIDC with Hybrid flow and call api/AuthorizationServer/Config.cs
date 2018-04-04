@@ -48,7 +48,7 @@ namespace AuthorizationServer
                     AllowedScopes = { "resourceApi" }
                 },
 
-                // OpenID Connect implicit flow client (MVC)
+                // OpenID Connect hybrid flow client (MVC)
                 new Client
                 {
                     ClientId = "mvc",

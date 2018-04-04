@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/Solution 1 - Setup OIDC system with client credentials/AuthorizationServer/AuthorizationServer.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

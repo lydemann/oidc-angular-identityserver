@@ -43,7 +43,6 @@ namespace ClientApp
                     // Request these scopes
                     options.Scope.Add("resourceApi");
                     options.Scope.Add("offline_access");
-
                 });
 
             services.AddMvc();

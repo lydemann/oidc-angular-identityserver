@@ -57,7 +57,7 @@ namespace ClientApp.Controllers
             return response;
         }
 
-        public async Task<HttpResponseMessage> CallApiUsingUserAccessToken()
+        private async Task<HttpResponseMessage> CallApiUsingUserAccessToken()
         {
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
