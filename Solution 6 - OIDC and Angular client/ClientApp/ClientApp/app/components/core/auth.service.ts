@@ -1,8 +1,7 @@
-﻿import { Injectable, OnInit, OnDestroy, Inject } from "@angular/core";
+import { Injectable, OnInit, OnDestroy, Inject } from "@angular/core";
 import { OidcSecurityService, OpenIDImplicitFlowConfiguration, AuthWellKnownEndpoints } from 'angular-auth-oidc-client';
-import { Observable } from "rxjs/Observable";
+import { Observable ,  Subscription } from "rxjs";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
-import { Subscription } from "rxjs/Subscription";
 
 @Injectable()
 export class AuthService implements OnInit, OnDestroy {

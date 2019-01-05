@@ -7,7 +7,7 @@
     "build": "rimraf wwwroot/dist && webpack --config webpack.config.vendor.js && webpack"
   },
   "devDependencies": {
-    "@ngtools/webpack": "^6.0.0-beta.7",
+    "@ngtools/webpack": "^7.1.4",
     "@types/chai": "4.0.1",
     "@types/jasmine": "2.5.53",
     "@types/webpack-env": "1.13.0",
@@ -42,27 +42,28 @@
     "rimraf": "^2.6.2",
     "style-loader": "0.18.2",
     "to-string-loader": "1.1.5",
-    "typescript": "^2.8.1",
+    "typescript": "^3.1.6",
     "url-loader": "0.5.9",
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.2",
     "webpack-merge": "4.1.0",
-    "zone.js": "0.8.12"
+    "zone.js": "0.8.26"
   },
   "dependencies": {
-    "@angular/animations": "^5.2.9",
-    "@angular/common": "^5.2.9",
-    "@angular/compiler": "^5.2.9",
-    "@angular/compiler-cli": "^5.2.9",
-    "@angular/cli": "^1.7.3",
-    "@angular/core": "^5.2.9",
-    "@angular/forms": "^5.2.9",
-    "@angular/http": "^5.2.9",
-    "@angular/platform-browser": "^5.2.9",
-    "@angular/platform-browser-dynamic": "^5.2.9",
-    "@angular/platform-server": "^5.2.9",
-    "@angular/router": "^5.2.9",
+    "@angular/animations": "^7.1.4",
+    "@angular/cli": "^7.1.4",
+    "@angular/common": "^7.1.4",
+    "@angular/compiler": "^7.1.4",
+    "@angular/compiler-cli": "^7.1.4",
+    "@angular/core": "^7.1.4",
+    "@angular/forms": "^7.1.4",
+    "@angular/http": "^7.1.4",
+    "@angular/platform-browser": "^7.1.4",
+    "@angular/platform-browser-dynamic": "^7.1.4",
+    "@angular/platform-server": "^7.1.4",
+    "@angular/router": "^7.1.4",
     "angular-auth-oidc-client": "^4.1.0",
-    "rxjs": "^5.5.2"
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.0.0-rc.0"
   }
 }
