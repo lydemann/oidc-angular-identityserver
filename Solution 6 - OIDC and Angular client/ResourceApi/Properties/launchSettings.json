@@ -17,7 +17,7 @@
       }
     },
     "ResourceApi": {
-      "commandName": "IISExpress",
+      "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {

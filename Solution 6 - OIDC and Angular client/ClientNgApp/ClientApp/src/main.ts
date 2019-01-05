@@ -9,7 +9,8 @@ export function getBaseUrl() {
 }
 
 const providers = [
-  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
+  { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] },
+  { provide: 'AUTH_URL', useValue: 'http://localhost:5000' }
 ];
 
 if (environment.production) {

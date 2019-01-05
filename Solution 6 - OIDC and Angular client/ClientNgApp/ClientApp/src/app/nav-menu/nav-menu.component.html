@@ -24,7 +24,7 @@
             <a class="nav-link text-dark"  (click)="login()" [routerLink]="['/login']">Login</a>
           </li>
           <li *ngIf="isAuthorized" class="nav-item"  [routerLinkActive]="['link-active']">
-              <a (click)="logout()" class="nav-link text-dark">Logout</a>
+              <a (click)="logout()" class="nav-link text-dark" href="#">Logout</a>
           </li>
         </ul>
       </div>

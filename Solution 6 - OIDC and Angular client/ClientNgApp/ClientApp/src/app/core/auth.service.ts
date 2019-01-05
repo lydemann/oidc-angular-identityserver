@@ -11,16 +11,16 @@ export class AuthService implements OnInit, OnDestroy {
     constructor(
         private oidcSecurityService: OidcSecurityService,
         private http: HttpClient,
-        @Inject('ORIGIN_URL') private originUrl: string,
+        @Inject('BASE_URL') private originUrl: string,
         @Inject('AUTH_URL') private authUrl: string,
     ) {
         const openIdImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
         openIdImplicitFlowConfiguration.stsServer = authUrl,
-        openIdImplicitFlowConfiguration.redirect_url = originUrl + 'callback',
+        openIdImplicitFlowConfiguration.redirect_url = originUrl,
         openIdImplicitFlowConfiguration.client_id = 'spaClient';
         openIdImplicitFlowConfiguration.response_type = 'id_token token';
         openIdImplicitFlowConfiguration.scope = 'openid profile resourceApi';
-        openIdImplicitFlowConfiguration.post_logout_redirect_uri = originUrl + 'home';
+        openIdImplicitFlowConfiguration.post_logout_redirect_uri = originUrl;
         openIdImplicitFlowConfiguration.forbidden_route = '/forbidden';
         openIdImplicitFlowConfiguration.unauthorized_route = '/unauthorized';
         openIdImplicitFlowConfiguration.auto_userinfo = true;
@@ -43,6 +43,7 @@ export class AuthService implements OnInit, OnDestroy {
 
         this.oidcSecurityService.setupModule(openIdImplicitFlowConfiguration, authWellKnownEndpoints);
 
+        debugger;
         if (this.oidcSecurityService.moduleSetup) {
             this.doCallbackLogicIfRequired();
         } else {
