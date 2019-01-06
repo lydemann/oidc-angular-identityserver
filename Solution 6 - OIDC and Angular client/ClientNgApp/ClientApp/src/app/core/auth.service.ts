@@ -72,7 +72,6 @@ export class AuthService implements OnInit, OnDestroy {
         // authorizedCallback returns wrong result when hash is URI encoded
         this.oidcSecurityService.authorizedCallback();
       } else {
-        this.oidcSecurityService.authorizedCallback();
 
         this.oidcSecurityService.authorize();
       }
@@ -117,6 +116,11 @@ export class AuthService implements OnInit, OnDestroy {
         let headers = new HttpHeaders();
         headers = headers.set('Content-Type', 'application/json');
         return this.appendAuthHeader(headers);
+    }
+
+    public getToken() {
+        const token = this.oidcSecurityService.getToken();
+        return token;
     }
 
     private appendAuthHeader(headers: HttpHeaders) {

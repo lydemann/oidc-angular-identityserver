@@ -16,10 +16,6 @@ export class FetchDataComponent {
     }, (error) => {
       console.error(error);
     });
-
-    //http.get<WeatherForecast[]>(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
-    //  this.forecasts = result;
-    //}, error => console.error(error));
   }
 }
 
