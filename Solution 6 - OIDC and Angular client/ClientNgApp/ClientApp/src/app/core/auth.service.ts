@@ -16,7 +16,7 @@ export class AuthService implements OnInit, OnDestroy {
     ) {
         const openIdImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
         openIdImplicitFlowConfiguration.stsServer = authUrl,
-        openIdImplicitFlowConfiguration.redirect_url = originUrl,
+        openIdImplicitFlowConfiguration.redirect_url = originUrl + 'callback',
         openIdImplicitFlowConfiguration.client_id = 'spaClient';
         openIdImplicitFlowConfiguration.response_type = 'id_token token';
         openIdImplicitFlowConfiguration.scope = 'openid profile resourceApi';
@@ -43,7 +43,6 @@ export class AuthService implements OnInit, OnDestroy {
 
         this.oidcSecurityService.setupModule(openIdImplicitFlowConfiguration, authWellKnownEndpoints);
 
-        debugger;
         if (this.oidcSecurityService.moduleSetup) {
             this.doCallbackLogicIfRequired();
         } else {
@@ -67,9 +66,19 @@ export class AuthService implements OnInit, OnDestroy {
 
 
     private doCallbackLogicIfRequired() {
-        if (typeof location !== "undefined") {
-            this.oidcSecurityService.authorizedCallback();
-        }
+
+      if (window.location.hash) {
+        window.location.hash = decodeURIComponent(window.location.hash);
+        // authorizedCallback returns wrong result when hash is URI encoded
+        this.oidcSecurityService.authorizedCallback();
+      } else {
+        this.oidcSecurityService.authorizedCallback();
+
+        this.oidcSecurityService.authorize();
+      }
+        //if (typeof location !== "undefined") {
+        //    this.oidcSecurityService.authorizedCallback();
+        //}
     }
 
     getIsAuthorized(): Observable<boolean> {

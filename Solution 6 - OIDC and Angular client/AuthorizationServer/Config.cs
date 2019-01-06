@@ -78,7 +78,7 @@ namespace AuthorizationServer
                     AllowAccessTokensViaBrowser = true,
 
                     RedirectUris = { "http://localhost:5002/callback" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/home" },
+                    PostLogoutRedirectUris = { "http://localhost:5002/" },
                     AllowedCorsOrigins = { "http://localhost:5002" },
                     AllowedScopes =
                     {
