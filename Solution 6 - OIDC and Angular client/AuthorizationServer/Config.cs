@@ -27,6 +27,8 @@ namespace AuthorizationServer
             };
         }
 
+        private static string spaClientUrl = "https://localhost:53709";
+
         public static IEnumerable<Client> GetClients()
         {
             return new List<Client>
@@ -60,8 +62,8 @@ namespace AuthorizationServer
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "https://localhost:44311/signin-oidc" },
-                    PostLogoutRedirectUris = { "https://localhost:44311/signout-callback-oidc" },
+                    RedirectUris = { $"{spaClientUrl}/signin-oidc" },
+                    PostLogoutRedirectUris = { $"{spaClientUrl}/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -77,16 +79,56 @@ namespace AuthorizationServer
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-                    RedirectUris = { "https://localhost:44311/callback" },
-                    PostLogoutRedirectUris = { "https://localhost:44311/" },
-                    AllowedCorsOrigins = { "https://localhost:44311" },
+                    RedirectUris = { $"{spaClientUrl}/callback" },
+                    PostLogoutRedirectUris = { $"{spaClientUrl}/" },
+                    AllowedCorsOrigins = { $"{spaClientUrl}" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile, 
                         "resourceApi"
                     }
-                }
+                },
+                 new Client
+                {
+                    ClientId = "spaCodeClient",
+                    ClientName = "SPA Code Client",
+                    AccessTokenType = AccessTokenType.Reference,
+                    // RequireConsent = false,
+                    AccessTokenLifetime = 330,// 330 seconds, default 60 minutes
+                    IdentityTokenLifetime = 30,
+
+                    RequireClientSecret = false,
+                    AllowedGrantTypes = GrantTypes.Code,
+                    RequirePkce = true,
+
+                    AllowAccessTokensViaBrowser = true,
+                    RedirectUris = new List<string>
+                    {
+                        $"{spaClientUrl}",
+                        $"{spaClientUrl}/silent-renew.html",
+                        "https://localhost:4200",
+                        "https://localhost:4200/silent-renew.html"
+                    },
+                    PostLogoutRedirectUris = new List<string>
+                    {
+                        $"{spaClientUrl}/unauthorized",
+                        $"{spaClientUrl}",
+                        "https://localhost:4200/unauthorized",
+                        "https://localhost:4200"
+                    },
+                    AllowedCorsOrigins = new List<string>
+                    {
+                        $"{spaClientUrl}",
+                        "https://localhost:4200"
+                    },
+                    AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "resourceApi"
+                    }
+                },
             };
         }
 

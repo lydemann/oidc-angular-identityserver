@@ -75,16 +75,6 @@ C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for c
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfo.cs
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.dll
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.pdb
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.deps.json
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.runtimeconfig.json
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.runtimeconfig.dev.json
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.dll
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.pdb
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.csproj.CoreCompileInputs.cache
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfoInputs.cache
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfo.cs
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.dll
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.pdb
 Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.deps.json
 Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.runtimeconfig.json
 Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\bin\Debug\netcoreapp2.0\ResourceApi.runtimeconfig.dev.json
@@ -96,4 +86,3 @@ Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\Resour
 Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.AssemblyInfo.cs
 Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.dll
 Z:\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.pdb
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\ResourceApi\obj\Debug\netcoreapp2.0\ResourceApi.csprojAssemblyReference.cache
