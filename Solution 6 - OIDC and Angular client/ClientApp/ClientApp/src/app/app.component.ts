@@ -8,10 +8,10 @@ import { AuthService } from './core/auth/auth.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
 
+  title = 'app';
   constructor(private authService: AuthService) {
 
   }
-  title = 'app';
   ngOnInit(): void {
     this.authService.initAuth();
   }
