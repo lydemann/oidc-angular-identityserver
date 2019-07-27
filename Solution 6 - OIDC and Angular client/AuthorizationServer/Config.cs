@@ -27,7 +27,7 @@ namespace AuthorizationServer
             };
         }
 
-        private static string spaClientUrl = "https://localhost:53709";
+        private static string spaClientUrl = "https://localhost:44311";
 
         public static IEnumerable<Client> GetClients()
         {
@@ -93,7 +93,7 @@ namespace AuthorizationServer
                 {
                     ClientId = "spaCodeClient",
                     ClientName = "SPA Code Client",
-                    AccessTokenType = AccessTokenType.Reference,
+                    AccessTokenType = AccessTokenType.Jwt,
                     // RequireConsent = false,
                     AccessTokenLifetime = 330,// 330 seconds, default 60 minutes
                     IdentityTokenLifetime = 30,
@@ -105,7 +105,7 @@ namespace AuthorizationServer
                     AllowAccessTokensViaBrowser = true,
                     RedirectUris = new List<string>
                     {
-                        $"{spaClientUrl}",
+                        $"{spaClientUrl}/callback",
                         $"{spaClientUrl}/silent-renew.html",
                         "https://localhost:4200",
                         "https://localhost:4200/silent-renew.html"

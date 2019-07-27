@@ -1,7 +1,8 @@
 import { Injectable, OnInit, OnDestroy, Inject } from '@angular/core';
-import { OidcSecurityService, OpenIdConfiguration, AuthWellKnownEndpoints } from 'angular-auth-oidc-client';
+import { OidcSecurityService, OpenIdConfiguration, AuthWellKnownEndpoints, AuthorizationResult, AuthorizationState } from 'angular-auth-oidc-client';
 import { Observable ,  Subscription } from 'rxjs';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService implements OnDestroy {
@@ -11,6 +12,7 @@ export class AuthService implements OnDestroy {
     constructor(
         private oidcSecurityService: OidcSecurityService,
         private http: HttpClient,
+        private router: Router,
         @Inject('BASE_URL') private originUrl: string,
         @Inject('AUTH_URL') private authUrl: string,
     ) {
@@ -28,12 +30,16 @@ export class AuthService implements OnDestroy {
         const openIdImplicitFlowConfiguration: OpenIdConfiguration = {
             stsServer: this.authUrl,
             redirect_url: this.originUrl + 'callback',
-            client_id: 'spaClient',
-            response_type: 'id_token token',
+            client_id: 'spaCodeClient',
+            response_type: 'code',
             scope: 'openid profile resourceApi',
             post_logout_redirect_uri: this.originUrl,
             forbidden_route: '/forbidden',
             unauthorized_route: '/unauthorized',
+            start_checksession: true,
+            silent_renew: true,
+            silent_renew_url: this.originUrl + '/silent-renew.html',
+            history_cleanup_off: true,
             auto_userinfo: true,
             log_console_warning_active: true,
             log_console_debug_active: true,
@@ -64,22 +70,32 @@ export class AuthService implements OnDestroy {
         this.isAuthorizedSubscription = this.oidcSecurityService.getIsAuthorized().subscribe((isAuthorized => {
             this.isAuthorized = isAuthorized;
         }));
+
+        this.oidcSecurityService.onAuthorizationResult.subscribe(
+            (authorizationResult: AuthorizationResult) => {
+                this.onAuthorizationResultComplete(authorizationResult);
+            });
     }
 
+    private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {
+
+        console.log('Auth result received AuthorizationState:'
+            + authorizationResult.authorizationState
+            + ' validationResult:' + authorizationResult.validationResult);
+
+        if (authorizationResult.authorizationState === AuthorizationState.unauthorized) {
+            if (window.parent) {
+                // sent from the child iframe, for example the silent renew
+                this.router.navigate(['/unauthorized']);
+            } else {
+                window.location.href = '/unauthorized';
+            }
+        }
+    }
 
     private doCallbackLogicIfRequired() {
 
         this.oidcSecurityService.authorizedCallbackWithCode(window.location.toString());
-    //   if (window.location.hash) {
-    //     window.location.hash = decodeURIComponent(window.location.hash);
-    //     // authorizedCallback returns wrong result when hash is URI encoded
-    //   } else {
-
-    //     this.oidcSecurityService.authorize();
-    //   }
-        // if (typeof location !== "undefined") {
-        //    this.oidcSecurityService.authorizedCallback();
-        // }
     }
 
     getIsAuthorized(): Observable<boolean> {
