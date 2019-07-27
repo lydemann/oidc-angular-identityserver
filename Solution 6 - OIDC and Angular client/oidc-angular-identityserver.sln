@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StsServerIdentity", "StsSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "ClientApp\ClientApp.csproj", "{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ng-app-test", "ng-app-test\ng-app-test.csproj", "{02957CE6-73AC-4691-B492-73E185C97196}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02957CE6-73AC-4691-B492-73E185C97196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02957CE6-73AC-4691-B492-73E185C97196}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02957CE6-73AC-4691-B492-73E185C97196}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02957CE6-73AC-4691-B492-73E185C97196}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
