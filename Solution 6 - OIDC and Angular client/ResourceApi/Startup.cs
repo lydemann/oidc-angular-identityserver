@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using IdentityServer4.AccessTokenValidation;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,11 +22,11 @@ namespace ResourceApi
                 .AddAuthorization()
                 .AddJsonFormatters();
 
-            services.AddAuthentication("Bearer")
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://localhost:5000";
-                    options.RequireHttpsMetadata = false;
+                    options.Authority = "https://localhost:44370";
+                    options.RequireHttpsMetadata = true;
                     options.ApiName = "resourceApi";
                 });
 
