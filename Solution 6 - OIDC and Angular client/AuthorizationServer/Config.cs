@@ -60,8 +60,8 @@ namespace AuthorizationServer
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                    RedirectUris = { "https://localhost:44311/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://localhost:44311/signout-callback-oidc" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
@@ -77,9 +77,9 @@ namespace AuthorizationServer
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-                    RedirectUris = { "http://localhost:5002/callback" },
-                    PostLogoutRedirectUris = { "http://localhost:5002/" },
-                    AllowedCorsOrigins = { "http://localhost:5002" },
+                    RedirectUris = { "https://localhost:44311/callback" },
+                    PostLogoutRedirectUris = { "https://localhost:44311/" },
+                    AllowedCorsOrigins = { "https://localhost:44311" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
