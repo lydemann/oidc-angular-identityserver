@@ -1,5 +1,5 @@
-# OpenID Connect with Angular, Identityserver4 and ASP.NET core API
-An OpenID Connect setup with Angular 5, IdentityServer 4 and ASP.NET Core resource api.
+# OpenID Connect with Angular 8, Identityserver4 and ASP.NET core API
+An OpenID Connect setup with Angular 8, IdentityServer 4 and ASP.NET Core resource api.
 These solutions are used as material for a blog series about OpenID connect.
 
 * Part 1: [Creating an OpenID connect system with Angular 5 and IdentityServer4](https://christianlydemann.com/creating-an-openid-connect-system-with-angular-5-and-identityserver4-oidc-part-1/)

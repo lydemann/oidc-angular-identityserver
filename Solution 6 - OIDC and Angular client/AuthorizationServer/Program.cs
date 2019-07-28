@@ -1,40 +1,79 @@
 ﻿using System;
-using AuthorizationServer.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
+using AuthorizationServer.Data;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
+using Serilog.Events;
+using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
 
 namespace AuthorizationServer
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
-            var host = BuildWebHost(args);
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();
 
-            using (var scope = host.Services.CreateScope())
+            try
             {
-                var services = scope.ServiceProvider;
+                Log.Information("Starting web host");
 
-                try
-                {
-                    SeedData.EnsureSeedData(services);
+                var host = CreateWebHostBuilder(args);
 
-                }
-                catch (Exception ex)
+                using (var scope = host.Services.CreateScope())
                 {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred while migrating and seeding the database.");
+                    var services = scope.ServiceProvider;
+
+                    try
+                    {
+                        SeedData.EnsureSeedData(services);
+
+                    }
+                    catch (Exception ex)
+                    {
+                        var logger = services.GetRequiredService<ILogger<Program>>();
+                        logger.LogError(ex, "An error occurred while migrating and seeding the database.");
+                    }
                 }
+
+                host.Run();
+                return 0;
             }
-
-            host.Run();
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Host terminated unexpectedly");
+                return 1;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
+        public static IWebHost CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .Build();
+                .UseKestrel(options =>
+                {
+                    options.AddServerHeader = false;
+                    //options.Listen(IPAddress.Any, 443, listenOptions =>
+                    //{
+                    //    listenOptions.UseHttps("server.pfx", "password");
+                    //});
+                })
+                .UseSerilog((hostingContext, loggerConfiguration) => loggerConfiguration
+                    .ReadFrom.Configuration(hostingContext.Configuration)
+                    .MinimumLevel.Debug()
+                    .Enrich.FromLogContext()
+                    .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+                //.WriteTo.RollingFile("Log")
+                ).Build();
     }
 }

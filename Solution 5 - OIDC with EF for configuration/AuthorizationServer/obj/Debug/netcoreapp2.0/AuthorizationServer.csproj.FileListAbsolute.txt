@@ -15,10 +15,10 @@ C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for c
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.runtimeconfig.dev.json
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.dll
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojResolveAssemblyReference.cache
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 5 - OIDC with EF for configuration\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojAssemblyReference.cache
