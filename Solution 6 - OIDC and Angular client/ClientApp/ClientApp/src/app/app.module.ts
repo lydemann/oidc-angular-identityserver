@@ -30,6 +30,7 @@ import { CoreModule } from './core/core.module';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'unauthorized', component: UnauthorizedComponent },
+      { path: 'forbidden', component: UnauthorizedComponent },
       { path: '**', redirectTo: '' }
     ]),
     CoreModule

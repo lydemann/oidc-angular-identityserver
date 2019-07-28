@@ -1,6 +1,7 @@
-import { Injectable, OnInit, OnDestroy, Inject } from '@angular/core';
+import { Injectable, OnDestroy, Inject } from '@angular/core';
 import { OidcSecurityService, OpenIdConfiguration, AuthWellKnownEndpoints, AuthorizationResult, AuthorizationState } from 'angular-auth-oidc-client';
-import { Observable ,  Subscription } from 'rxjs';
+import { Observable ,  Subscription, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -113,21 +114,37 @@ export class AuthService implements OnDestroy {
     }
 
     get(url: string): Observable<any> {
-        return this.http.get(url, { headers: this.getHeaders() });
+        return this.http.get(url, { headers: this.getHeaders() })
+        .pipe(catchError((error) => {
+            this.oidcSecurityService.handleError(error);
+            return throwError(error);
+        }));
     }
 
     put(url: string, data: any): Observable<any> {
         const body = JSON.stringify(data);
-        return this.http.put(url, body, { headers: this.getHeaders() });
+        return this.http.put(url, body, { headers: this.getHeaders() })
+        .pipe(catchError((error) => {
+            this.oidcSecurityService.handleError(error);
+            return throwError(error);
+        }));
     }
 
     delete(url: string): Observable<any> {
-        return this.http.delete(url, { headers: this.getHeaders() });
+        return this.http.delete(url, { headers: this.getHeaders() })
+        .pipe(catchError((error) => {
+            this.oidcSecurityService.handleError(error);
+            return throwError(error);
+        }));
     }
 
     post(url: string, data: any): Observable<any> {
         const body = JSON.stringify(data);
-        return this.http.post(url, body, { headers: this.getHeaders() });
+        return this.http.post(url, body, { headers: this.getHeaders() })
+        .pipe(catchError((error) => {
+            this.oidcSecurityService.handleError(error);
+            return throwError(error);
+        }));
     }
 
     private getHeaders() {
