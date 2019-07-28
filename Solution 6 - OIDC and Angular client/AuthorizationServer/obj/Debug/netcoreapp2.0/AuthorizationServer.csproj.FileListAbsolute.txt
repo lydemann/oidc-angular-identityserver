@@ -41,8 +41,8 @@ C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular c
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\bin\Debug\netcoreapp2.0\AuthorizationServer.pdb
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csprojAssemblyReference.cache
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.csproj.CoreCompileInputs.cache
-C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfoInputs.cache
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.AssemblyInfo.cs
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.dll
 C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\AuthorizationServer.pdb
+C:\Users\chris\Repos\oidc-angular-identityserver\Solution 6 - OIDC and Angular client\AuthorizationServer\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
