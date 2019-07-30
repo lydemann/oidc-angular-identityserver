@@ -28,7 +28,7 @@ export class AuthService implements OnDestroy {
     }
 
     public initAuth() {
-        const openIdImplicitFlowConfiguration: OpenIdConfiguration = {
+        const openIdConfiguration: OpenIdConfiguration = {
             stsServer: this.authUrl,
             redirect_url: this.originUrl + 'callback',
             client_id: 'spaCodeClient',
@@ -58,7 +58,7 @@ export class AuthService implements OnDestroy {
             introspection_endpoint: this.authUrl + '/connect/introspect',
         };
 
-        this.oidcSecurityService.setupModule(openIdImplicitFlowConfiguration, authWellKnownEndpoints);
+        this.oidcSecurityService.setupModule(openIdConfiguration, authWellKnownEndpoints);
 
         if (this.oidcSecurityService.moduleSetup) {
             this.doCallbackLogicIfRequired();
