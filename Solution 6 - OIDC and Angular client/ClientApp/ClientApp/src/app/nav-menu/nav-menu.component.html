@@ -17,10 +17,10 @@
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
             <a class="nav-link text-dark" [routerLink]='["/fetch-data"]'>Fetch data</a>
           </li>
-          <li *ngIf="!isAuthorized" class="nav-item"  [routerLinkActive]="['link-active']">
+          <li *ngIf="!isAuthorized$ | async" class="nav-item"  [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark"  (click)="login()" [routerLink]="['/login']">Login</a>
           </li>
-          <li *ngIf="isAuthorized" class="nav-item"  [routerLinkActive]="['link-active']">
+          <li *ngIf="isAuthorized$ | async" class="nav-item"  [routerLinkActive]="['link-active']">
               <a (click)="logout()" class="nav-link text-dark" href="#">Logout</a>
           </li>
         </ul>

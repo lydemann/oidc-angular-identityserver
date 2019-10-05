@@ -25,7 +25,7 @@ namespace ResourceApi
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "https://localhost:44370";
+                    options.Authority = Configuration["authorizationServerUrl"];
                     options.RequireHttpsMetadata = true;
                     options.ApiName = "resourceApi";
                 });
