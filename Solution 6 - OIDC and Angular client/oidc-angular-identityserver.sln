@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29025.244
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResourceApi", "ResourceApi\ResourceApi.csproj", "{D5A18787-6A43-4B00-AC04-B951F33B607B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationServer", "AuthorizationServer\AuthorizationServer.csproj", "{9EC6D694-1FA3-4104-8126-BA3491162541}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StsServerIdentity", "StsServerIdentity\StsServerIdentity.csproj", "{136C2D8B-218B-4ADF-9503-ACCA51047AB7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "ClientApp\ClientApp.csproj", "{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}"
 EndProject
@@ -25,10 +23,6 @@ Global
 		{9EC6D694-1FA3-4104-8126-BA3491162541}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EC6D694-1FA3-4104-8126-BA3491162541}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EC6D694-1FA3-4104-8126-BA3491162541}.Release|Any CPU.Build.0 = Release|Any CPU
-		{136C2D8B-218B-4ADF-9503-ACCA51047AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{136C2D8B-218B-4ADF-9503-ACCA51047AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{136C2D8B-218B-4ADF-9503-ACCA51047AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{136C2D8B-218B-4ADF-9503-ACCA51047AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D2FE6FF-44E1-4F82-8AB9-267333B79F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
