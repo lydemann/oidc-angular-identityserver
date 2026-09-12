@@ -1,0 +1,43 @@
+{
+  "name": "solution-7-modern-angular-auth-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "infra": "docker compose up -d keycloak redis",
+    "infra:down": "docker compose down",
+    "start": "nx run-many -t serve -p shell orders-mfe orders-api auth-gateway --parallel=4",
+    "serve:gateway": "nx serve auth-gateway",
+    "serve:shell": "nx serve shell",
+    "serve:orders": "nx serve orders-mfe"
+  },
+  "dependencies": {
+    "@angular/common": "^22.1.0",
+    "@angular/compiler": "^22.1.0",
+    "@angular/core": "^22.1.0",
+    "@angular/platform-browser": "^22.1.0",
+    "connect-redis": "^9.0.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.0",
+    "helmet": "^8.0.0",
+    "http-proxy-middleware": "^3.0.0",
+    "jose": "^6.0.0",
+    "openid-client": "^6.8.0",
+    "redis": "^5.0.0",
+    "tslib": "^2.8.0",
+    "zone.js": "^0.15.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.1.0",
+    "@nx/angular": "23.2.1",
+    "@nx/js": "23.2.1",
+    "@nx/workspace": "23.2.1",
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.0",
+    "@types/node": "^24.0.0",
+    "nx": "23.2.1",
+    "tsx": "^4.20.0",
+    "typescript": "^6.0.0"
+  }
+}

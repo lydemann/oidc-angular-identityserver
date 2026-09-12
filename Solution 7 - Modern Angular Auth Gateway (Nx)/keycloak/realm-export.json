@@ -1,0 +1,68 @@
+{
+  "realm": "angular-bff",
+  "enabled": true,
+  "registrationAllowed": false,
+  "clients": [
+    {
+      "clientId": "auth-gateway",
+      "name": "Angular Auth Gateway",
+      "enabled": true,
+      "publicClient": false,
+      "secret": "dev-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "redirectUris": ["http://localhost:8080/auth/callback"],
+      "webOrigins": ["http://localhost:8080"],
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:8080/*"
+      },
+      "optionalClientScopes": ["orders-api"]
+    },
+    {
+      "clientId": "orders-api",
+      "name": "Orders API",
+      "enabled": true,
+      "bearerOnly": true
+    }
+  ],
+  "clientScopes": [
+    {
+      "name": "orders-api",
+      "description": "Adds the orders-api audience",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true"
+      },
+      "protocolMappers": [
+        {
+          "name": "orders-api-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "orders-api",
+            "id.token.claim": "false",
+            "access.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "alice",
+      "enabled": true,
+      "email": "alice@example.test",
+      "firstName": "Alice",
+      "lastName": "Developer",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "alice",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}

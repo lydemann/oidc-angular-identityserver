@@ -1,0 +1,14 @@
+{
+  "name": "auth-gateway",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/auth-gateway/src",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx watch apps/auth-gateway/src/main.ts"
+      }
+    }
+  }
+}
