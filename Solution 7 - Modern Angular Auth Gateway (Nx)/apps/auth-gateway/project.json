@@ -6,6 +6,7 @@
   "targets": {
     "serve": {
       "executor": "nx:run-commands",
+      "continuous": true,
       "options": {
         "command": "tsx watch apps/auth-gateway/src/main.ts"
       }
