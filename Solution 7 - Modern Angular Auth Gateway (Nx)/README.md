@@ -1,13 +1,13 @@
 # Solution 7 - Modern Angular Auth Gateway (Nx)
 
-This solution updates the original Angular + OpenID Connect series to the current browser security model: the Angular applications do **not** receive OAuth access or refresh tokens. A server-side auth gateway acts as the confidential OAuth/OIDC client and Backend-for-Frontend (BFF).
+This solution continues the original Angular + OpenID Connect series with the current browser-security model: Angular does **not** receive OAuth access or refresh tokens. A server-side auth gateway acts as the confidential OAuth/OIDC client and Backend-for-Frontend (BFF).
 
-The sample is intentionally small, but the boundaries mirror a larger microfrontend system. The specific OpenID Provider used for local development is interchangeable; the important part is the browser/BFF security boundary.
+The specific OpenID Provider used for local development is interchangeable. The important part is the browser/BFF security boundary.
 
 ```text
 Browser
   |
-  | opaque HttpOnly session cookie
+  | HttpOnly session cookie
   v
 Auth Gateway / BFF :8080
   |-- /                -> shell :4200
@@ -19,150 +19,141 @@ Auth Gateway / BFF :8080
 Redis :6379 stores sessions and short-lived login transactions.
 ```
 
+## Standards context
+
+The sample follows the direction of the current OAuth guidance:
+
+- [RFC 7636](https://www.rfc-editor.org/rfc/rfc7636.html) defines PKCE.
+- [RFC 9700](https://www.rfc-editor.org/rfc/rfc9700.html) is the OAuth 2.0 Security Best Current Practice. It requires PKCE for public clients, recommends it for confidential clients, requires exact OAuth redirect-URI matching, and says clients must not expose open redirectors.
+- [RFC 10017](https://www.rfc-editor.org/rfc/rfc10017.html) is the browser-based applications BCP. It requires Authorization Code + PKCE for browser public clients, says Implicit must not be used to obtain access tokens, and presents the BFF as the strongest of the three common browser application architecture patterns.
+
 ## What this demonstrates
 
 - Authorization Code + PKCE is executed by the server-side gateway.
-- The browser only receives a session cookie; tokens stay in Redis-backed server-side session state.
-- Angular calls relative, same-origin URLs and never builds an `Authorization: Bearer ...` header.
-- Direct navigation to `/orders/...` is handled by the auth gateway. If the user is not authenticated, the gateway records a validated local `returnTo`, sends the browser through login, and returns it to the original deep link.
+- The browser receives an HttpOnly session cookie; OAuth tokens stay server-side.
+- Angular calls relative URLs and never builds an `Authorization: Bearer ...` header.
+- Direct MFE deep links can enter the login flow and return to the original route.
 - API requests return `401` instead of redirecting to HTML login pages.
-- Mutating browser-to-BFF calls require `X-CSRF: 1` and a same-origin `Origin` header.
-- The proxy route table is fixed. User input can never select an arbitrary upstream host.
-- Multiple gateway replicas can share Redis; sticky sessions are not required.
-- The gateway uses a mature OIDC client library rather than implementing protocol details manually.
+- Mutating browser-to-BFF calls require the sample's CSRF/Origin checks.
+- The proxy route table is fixed; browser input cannot choose an arbitrary upstream.
+- Multiple gateway replicas can share Redis, so sticky sessions are not required.
 
-## OIDC client library
+## Use a mature OIDC client in the auth gateway
 
-The Node/TypeScript gateway uses [`openid-client`](https://github.com/panva/openid-client). A mature OIDC client library is preferable to hand-rolling protocol details because it provides building blocks for discovery, Authorization Code flow, S256 PKCE, state/nonce verification, refresh-token grants and related protocol handling.
+The Node/TypeScript gateway uses [`openid-client`](https://github.com/panva/openid-client) **inside the server-side auth gateway**. It is designed for JavaScript runtimes including Node.js and implements protocol building blocks such as discovery, Authorization Code flow, S256 PKCE, refresh-token grants, revocation, DPoP and PAR.
 
-The library does **not** replace the BFF security responsibilities. The application still owns session-cookie configuration, CSRF protection, safe `returnTo` validation, server-side session storage, fixed/allowlisted upstream routing and the distinction between document navigation and API requests.
-
-## Why the microfrontend JavaScript is not the security boundary
-
-Static JavaScript bundles are not secrets. In this sample, authentication protects document navigation and APIs rather than trying to make every JS chunk private. If you use a federation mechanism, the same principle normally applies to federation manifests/remote entry files: protect data and privileged operations at the API/BFF boundary.
-
-A microfrontend may be deployed on a completely different internal service while still being exposed to the browser through the auth gateway. The physical hosting location and the browser-facing application origin are separate concerns.
+The library does not replace the BFF responsibilities. The application still owns session-cookie configuration, CSRF protection, safe post-login redirects, server-side session storage and fixed/allowlisted upstream routing.
 
 ## Auth-gateway gotchas with microfrontends
 
-### Prefer one canonical browser origin
+### The MFE is not an OAuth client
 
-The best setup is that internal MFE service addresses are infrastructure only and are not normal browser entry points.
+An independently deployed MFE does not need to start its own OAuth flow. The auth gateway owns authentication for the browser application.
 
-```text
-Browser
-   |
-   v
-https://app.example.com/orders/123
-   |
-   v
-Auth Gateway
-   |
-   v
-http://orders-mfe.internal:4200
-```
-
-This keeps one session cookie, one OIDC callback origin, one CSRF/origin policy and one set of browser security rules.
-
-### If an internal MFE URL must be browser-accessible, redirect document navigation
-
-Sometimes an internal hostname exists because developers or internal users can reach the deployment directly. Do not let that silently become a second authenticated application origin.
-
-Prefer redirecting document navigation to the equivalent route on the canonical application origin:
+If somebody opens a direct internal MFE address, redirect **document navigation** to the auth-gateway address for that environment:
 
 ```text
-https://orders.internal.example/123?tab=history
+https://mf1.internal.example/orders/123?tab=history
         |
         | 302/307
         v
-https://app.example.com/orders/123?tab=history
+https://auth-gateway.internal.example/orders/123?tab=history
+        |
+        +-- no session -> OIDC login -> callback
         |
         v
-Auth Gateway -> Orders MFE
+Orders MFE
 ```
 
-Preserve the path and query string so deep links continue to work.
+Preserve the path and query string so deep links keep working. The redirect should happen at the routing/web-server boundary rather than relying on Angular to notice after the application has loaded.
 
-Use a temporary redirect such as `302` or `307` while the routing model may still change. A permanent `301`/`308` can be cached aggressively by browsers.
+### Protected API calls still go through the gateway
 
-### Redirecting is usually cleaner than proxying a second browser origin
-
-An alternative is to route `orders.internal.example` through the auth gateway and continue serving the application on that hostname. That can be secure, but it means supporting another browser origin and therefore additional cookie, `Origin`, CSP, CORS, absolute-URL and OAuth redirect-URI considerations.
-
-If the alternate hostname has no product requirement, redirecting it to the canonical application origin is usually simpler.
-
-### Do not blindly redirect static assets
-
-The redirect recommendation is about **document navigation**. JavaScript chunks, CSS, federation manifests and other static assets may be served from another host or CDN if required.
-
-The important boundary is that protected application navigation and API requests converge on the auth gateway.
-
-### MFE API calls should target the gateway
-
-The MFE should use relative API URLs:
+The MFE should make relative requests:
 
 ```ts
 this.http.get('/api/orders');
 ```
 
-When the application runs under the canonical origin this becomes:
+When the MFE is being used through the auth-gateway origin the flow is:
 
 ```text
-Browser -> https://app.example.com/api/orders
+Browser -> /api/orders
         -> Auth Gateway
         -> Orders API + server-side Bearer token
 ```
 
 The MFE never needs the OAuth access token itself.
 
-### Direct deep links should return to the original route
-
-For a request such as `/orders/123` without a session:
-
-```text
-/orders/123
-   |
-   v
-Auth Gateway
-   |
-   +-- store validated returnTo=/orders/123
-   +-- redirect to OIDC login
-   +-- handle callback and create session
-   v
-/orders/123
-```
-
-`returnTo` must only accept local application paths. Never allow an arbitrary external URL or the login endpoint becomes an open redirect.
-
 ### Navigation and API requests behave differently
 
-An unauthenticated browser navigation can be redirected into the login flow. An unauthenticated fetch/XHR/API request should normally receive `401`, not an HTML login page.
+An unauthenticated **document navigation** can be redirected into the login flow. An unauthenticated fetch/XHR/API call should normally receive `401`, not an HTML login page.
+
+### Validate the post-login destination
+
+This sample deliberately stores a local `returnTo` path such as `/orders/123`. That is a simple narrow policy, not an OAuth requirement that all post-login targets must be relative.
+
+An absolute return URL can also be valid if the server checks it against a strict allowlist of trusted origins/routes. The important requirement is that the application must not become an open redirector. [RFC 9700 section 4.11](https://www.rfc-editor.org/rfc/rfc9700.html#name-open-redirection) says clients must not expose open redirectors and should redirect only to allowed targets (or when the request origin/integrity can be authenticated).
 
 ### Do not make every MFE its own OAuth client
 
-Separate deployment does not require a separate authentication boundary. A shell and multiple independently deployed MFEs can all use the same BFF session and same-origin API surface.
+Separate deployment does not require a separate authentication boundary. A shell and independently deployed MFEs can share the same BFF session and gateway API surface.
 
-## Local development
+## Local development with Nx continuous tasks
+
+The auth gateway lives in the same Nx monorepo as the frontend apps. Its `serve` target is marked as a continuous task:
+
+```json
+{
+  "targets": {
+    "serve": {
+      "continuous": true
+    }
+  }
+}
+```
+
+Frontend `serve` targets depend on it:
+
+```json
+{
+  "targets": {
+    "serve": {
+      "dependsOn": [
+        { "projects": ["auth-gateway"], "target": "serve" }
+      ]
+    }
+  }
+}
+```
+
+Nx supports long-running dependencies through [`continuous: true`](https://nx.dev/docs/reference/project-configuration#continuous), so running:
+
+```bash
+nx serve orders-mfe
+```
+
+also starts `auth-gateway:serve` without waiting for the gateway process to exit. The same dependency is configured for the shell in this sample.
+
+This is the same general monorepo idea described in [The Stages of an Angular Architecture with Nx](https://christianlydemann.com/the-stages-of-an-angular-architecture-with-nx/): use the workspace task graph to express infrastructure/dev dependencies instead of relying on developers to remember a manual startup sequence.
+
+## Run the complete sample
 
 1. Copy `.env.example` to `.env`.
 2. Run `npm install`.
 3. Run `npm run infra` to start the local identity provider and Redis.
 4. Run `npm start`.
-5. Open `http://localhost:8080` (not the individual Angular dev-server ports).
-6. Log in with the demo user configured in the local development identity provider.
+5. Open `http://localhost:8080`.
+6. Log in with the demo user configured in the local identity provider.
 
-The gateway knows the local ports through environment variables and proxies both Angular dev servers, including WebSocket traffic. This gives the browser the same topology locally as in production: one origin in front of multiple frontend/backend processes.
+The gateway proxies the Angular dev servers and API while the browser uses the gateway origin.
 
 ## Production notes
 
-Place the auth gateway behind the normal public routing/load-balancing layer used by your environment. That outer layer can own generic transport concerns such as TLS termination and coarse traffic protection, while the auth gateway owns the browser session, OIDC client, token lifecycle and application-aware route mapping.
+Place the auth gateway behind the normal routing/load-balancing layer used by the environment. The auth gateway owns the browser session, OIDC client, token lifecycle and application-aware route mapping.
 
-Use HTTPS and a `Secure; HttpOnly` host-only session cookie. RFC 10017 recommends `SameSite=Strict` where the login/session bootstrap flow supports it. Keep CSRF protection even with SameSite cookies, especially when sibling subdomains exist. Sanitize forwarded headers at the trusted reverse-proxy boundary.
+Use HTTPS and a `Secure; HttpOnly` host-only session cookie. Keep explicit CSRF protection even with SameSite cookies. Sanitize forwarded headers at the trusted reverse-proxy boundary.
 
-The sample uses a static `X-CSRF: 1` header plus strict Origin checking. A production framework-native anti-forgery mechanism is also a good choice.
+The sample uses a static `X-CSRF: 1` header plus strict Origin checking for mutating browser requests. A production framework-native anti-forgery mechanism is also a good choice.
 
-## Federation
-
-The authentication model is independent of the frontend composition technology. Shell and remotes should still call same-origin BFF routes and should not own OAuth tokens.
-
-For a federated deployment, expose a canonical route such as `/orders/...` through the auth gateway and map its remote assets to the orders deployment. A remote loaded inside the shell should not start a second OIDC flow.
+The API still validates the access token signature, issuer, audience, expiry and the scopes/roles required for the operation. The gateway is responsible for safely obtaining and forwarding the credential; the API remains responsible for authorization.
