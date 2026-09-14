@@ -17,6 +17,9 @@
     },
     "serve": {
       "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        { "projects": ["auth-gateway"], "target": "serve" }
+      ],
       "options": {
         "buildTarget": "shell:build",
         "port": 4200
