@@ -6,7 +6,7 @@
   "scripts": {
     "infra": "docker compose up -d keycloak redis",
     "infra:down": "docker compose down",
-    "start": "nx run-many -t serve -p shell orders-mfe orders-api auth-gateway --parallel=4",
+    "start": "nx run-many -t serve -p shell orders-mfe orders-api --parallel=4",
     "serve:gateway": "nx serve auth-gateway",
     "serve:shell": "nx serve shell",
     "serve:orders": "nx serve orders-mfe"
