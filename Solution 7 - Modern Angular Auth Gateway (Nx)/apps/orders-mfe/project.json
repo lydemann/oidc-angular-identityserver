@@ -18,6 +18,9 @@
     },
     "serve": {
       "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        { "projects": ["auth-gateway"], "target": "serve" }
+      ],
       "options": {
         "buildTarget": "orders-mfe:build",
         "port": 4201
