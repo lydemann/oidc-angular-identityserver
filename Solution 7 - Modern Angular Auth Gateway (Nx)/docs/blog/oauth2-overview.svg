@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="65" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#0f172a">OAuth 2.0 grant types</text>
+  
+  <rect x="70" y="145" width="220" height="260" rx="18" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="180" y="200" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#2563eb">Authorization Code</text>
+  <text x="180" y="250" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">User-facing apps</text>
+  <text x="180" y="360" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#2563eb">Current foundation</text><rect x="350" y="145" width="220" height="260" rx="18" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+  <text x="460" y="200" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#c2410c">Implicit</text>
+  <text x="460" y="250" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">Browser clients</text>
+  <text x="460" y="360" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#c2410c">No longer recommended</text><rect x="630" y="145" width="220" height="260" rx="18" fill="#ecfdf5" stroke="#15803d" stroke-width="2"/>
+  <text x="740" y="200" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#15803d">Client Credentials</text>
+  <text x="740" y="250" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">Machine-to-machine</text>
+  <text x="740" y="360" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#15803d">Still widely used</text><rect x="910" y="145" width="220" height="260" rx="18" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="1020" y="200" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#dc2626">Password Credentials</text>
+  <text x="1020" y="250" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">App handles password</text>
+  <text x="1020" y="360" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#dc2626">Must not be used</text>
+  <text x="600" y="470" text-anchor="middle" font-family="Arial" font-size="20" fill="#475569">OAuth 2.0 simplified delegated authorization and supported different client scenarios.</text>
+</svg>
