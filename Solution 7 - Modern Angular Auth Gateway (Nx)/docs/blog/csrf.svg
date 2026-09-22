@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="65" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#0f172a">Cookie sessions mean CSRF needs an explicit defense</text>
+  
+  <rect x="55" y="135" width="520" height="260" rx="20" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+  <text x="315" y="185" text-anchor="middle" font-family="Arial" font-size="25" font-weight="700" fill="#15803d">Legitimate Angular request</text>
+  <text x="315" y="235" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">Cookie: session=...</text>
+  <text x="315" y="270" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">X-CSRF: 1</text>
+  <text x="315" y="305" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">Origin: app.example.com</text>
+  <text x="315" y="350" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#15803d">✓ accepted</text>
+  <rect x="625" y="135" width="520" height="260" rx="20" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="885" y="185" text-anchor="middle" font-family="Arial" font-size="25" font-weight="700" fill="#dc2626">Cross-origin attacker</text>
+  <text x="885" y="235" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">browser may attach cookie</text>
+  <text x="885" y="270" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">custom header triggers preflight</text>
+  <text x="885" y="305" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">CORS does not approve origin</text>
+  <text x="885" y="350" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#dc2626">✕ actual request blocked</text>
+  <text x="600" y="455" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">SameSite helps, but it is not a complete CSRF defense for every deployment.</text>
+</svg>
