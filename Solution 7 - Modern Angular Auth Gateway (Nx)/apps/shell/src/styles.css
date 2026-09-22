@@ -1,0 +1,5 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #f7f7f7; color: #171717; }
+main { max-width: 760px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 14px; }
+nav { display: flex; gap: 1rem; align-items: center; margin: 2rem 0; }
+button, a { font: inherit; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; }

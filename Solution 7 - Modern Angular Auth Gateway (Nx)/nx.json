@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "defaultBase": "master",
+  "targetDefaults": {
+    "build": {
+      "cache": true
+    }
+  }
+}

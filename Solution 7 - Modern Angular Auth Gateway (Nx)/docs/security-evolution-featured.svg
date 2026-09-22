@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">The Evolution of Security in Angular Apps</title>
+  <desc id="desc">A dramatic security evolution illustration moving from browser tokens through PKCE to a server-side auth gateway.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.52" stop-color="#101a33"/>
+      <stop offset="1" stop-color="#06141a"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff355d"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="0.48" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#22c55e"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#d9e3f0"/></marker>
+  </defs>
+
+  <rect width="1200" height="675" rx="34" fill="url(#bg)"/>
+  <circle cx="930" cy="330" r="300" fill="url(#glow)" filter="url(#soft)"/>
+  <g opacity=".23" fill="#dbeafe">
+    <circle cx="90" cy="98" r="2"/><circle cx="176" cy="70" r="1.5"/><circle cx="290" cy="120" r="1.8"/><circle cx="410" cy="76" r="1.6"/>
+    <circle cx="1070" cy="110" r="2"/><circle cx="1130" cy="210" r="1.4"/><circle cx="1020" cy="560" r="1.8"/><circle cx="740" cy="90" r="1.2"/>
+  </g>
+
+  <text x="70" y="95" fill="#f8fafc" font-family="Inter,Arial,sans-serif" font-size="48" font-weight="800">The Evolution of Security</text>
+  <text x="70" y="142" fill="#9fb1c7" font-family="Inter,Arial,sans-serif" font-size="25">Angular authentication moved from browser-held tokens to a server-side security boundary.</text>
+
+  <g transform="translate(78 248)" filter="url(#shadow)">
+    <rect width="250" height="205" rx="28" fill="#121c31" stroke="#ef4444" stroke-opacity=".45"/>
+    <circle cx="62" cy="62" r="34" fill="#29161e" stroke="#ef4444" stroke-width="2"/>
+    <path d="M43 60h38M49 48h26M49 72h26" stroke="#fb7185" stroke-width="5" stroke-linecap="round"/>
+    <text x="28" y="126" fill="#fb7185" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">BROWSER TOKEN</text>
+    <text x="28" y="158" fill="#d2dbea" font-family="Inter,Arial,sans-serif" font-size="16">OAuth credential lives</text>
+    <text x="28" y="181" fill="#d2dbea" font-family="Inter,Arial,sans-serif" font-size="16">inside JavaScript.</text>
+  </g>
+
+  <path d="M345 350 C390 350 405 350 450 350" fill="none" stroke="#d9e3f0" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g transform="translate(470 248)" filter="url(#shadow)">
+    <rect width="250" height="205" rx="28" fill="#121c31" stroke="#f59e0b" stroke-opacity=".48"/>
+    <circle cx="62" cy="62" r="34" fill="#2b2110" stroke="#f59e0b" stroke-width="2"/>
+    <path d="M46 63l11 11 23-28" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="28" y="126" fill="#fbbf24" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700">CODE + PKCE</text>
+    <text x="28" y="158" fill="#d2dbea" font-family="Inter,Arial,sans-serif" font-size="16">Safer code exchange,</text>
+    <text x="28" y="181" fill="#d2dbea" font-family="Inter,Arial,sans-serif" font-size="16">but tokens still reach the SPA.</text>
+  </g>
+
+  <path d="M737 350 C780 350 795 350 837 350" fill="none" stroke="#d9e3f0" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g transform="translate(855 218)" filter="url(#shadow)">
+    <path d="M130 4 L244 47 V139 C244 216 197 263 130 295 C63 263 16 216 16 139 V47 Z" fill="url(#shield)" opacity=".95"/>
+    <path d="M130 24 L224 59 V139 C224 199 189 238 130 268 C71 238 36 199 36 139 V59 Z" fill="#091524" stroke="#dbeafe" stroke-opacity=".24"/>
+    <rect x="84" y="111" width="92" height="78" rx="15" fill="#0e2231" stroke="#67e8f9" stroke-width="3"/>
+    <path d="M104 111v-21c0-34 52-34 52 0v21" fill="none" stroke="#67e8f9" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="130" cy="148" r="9" fill="#67e8f9"/><path d="M130 154v18" stroke="#67e8f9" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <text x="850" y="543" fill="#67e8f9" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="800">AUTH GATEWAY / BFF</text>
+  <text x="850" y="574" fill="#d2dbea" font-family="Inter,Arial,sans-serif" font-size="17">Browser gets a session.</text>
+  <text x="850" y="599" fill="#d2dbea" font-family="Inter,Arial,sans-serif" font-size="17">OAuth tokens stay server-side.</text>
+
+  <rect x="76" y="528" width="660" height="6" rx="3" fill="url(#road)" opacity=".9"/>
+  <text x="76" y="574" fill="#e5edf8" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700">The security boundary moves out of JavaScript.</text>
+  <text x="76" y="610" fill="#8fa4bc" font-family="Inter,Arial,sans-serif" font-size="17">From OAuth 2.0 → PKCE → modern browser BFF guidance</text>
+</svg>

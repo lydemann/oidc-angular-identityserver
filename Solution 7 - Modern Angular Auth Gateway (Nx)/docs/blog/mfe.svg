@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="65" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#0f172a">How this works with Angular microfrontends</text>
+  
+  <rect x="70" y="140" width="250" height="180" rx="20" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="195" y="200" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#2563eb">Browser</text>
+  <text x="195" y="245" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">/orders/123</text>
+  <rect x="475" y="130" width="250" height="200" rx="20" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+  <text x="600" y="195" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#1d4ed8">Auth Gateway</text>
+  <text x="600" y="240" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">session + route mapping</text>
+  <rect x="880" y="140" width="250" height="180" rx="20" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="1005" y="200" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#c2410c">Orders MFE</text>
+  <text x="1005" y="245" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">frontend deployment</text>
+  <line x1="320" y1="230" x2="470" y2="230" stroke="#2563eb" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="725" y1="230" x2="875" y2="230" stroke="#f97316" stroke-width="4" marker-end="url(#a)"/>
+  <rect x="170" y="375" width="860" height="90" rx="16" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+  <text x="600" y="410" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#dc2626">Direct internal MFE URL?</text>
+  <text x="600" y="442" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">mf1.internal.example/orders/123 → 302/307 → auth-gateway.internal.example/orders/123</text>
+</svg>

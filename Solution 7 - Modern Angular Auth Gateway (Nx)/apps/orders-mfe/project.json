@@ -1,0 +1,30 @@
+{
+  "name": "orders-mfe",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/orders-mfe/src",
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{options.outputPath.base}"],
+      "options": {
+        "outputPath": { "base": "dist/apps/orders-mfe" },
+        "index": "apps/orders-mfe/src/index.html",
+        "browser": "apps/orders-mfe/src/main.ts",
+        "tsConfig": "apps/orders-mfe/tsconfig.app.json",
+        "styles": ["apps/orders-mfe/src/styles.css"],
+        "baseHref": "/orders/"
+      }
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        { "projects": ["auth-gateway"], "target": "serve" }
+      ],
+      "options": {
+        "buildTarget": "orders-mfe:build",
+        "port": 4201
+      }
+    }
+  }
+}
