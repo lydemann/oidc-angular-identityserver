@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
 <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
 <rect width="1600" height="900" rx="28" fill="#f8fafc"/>
-<text x="85" y="95" font-family="Arial,sans-serif" font-size="54" font-weight="800" fill="#0f172a">The evolution of security in Angular apps</text>
+<text x="85" y="95" font-family="Arial,sans-serif" font-size="54" font-weight="800" fill="#0f172a">The evolution of auth in Angular apps</text>
 <text x="85" y="145" font-family="Arial,sans-serif" font-size="28" fill="#475569">From OAuth tokens in the browser to a server-side BFF/auth gateway</text>
 <rect x="65" y="225" width="440" height="500" rx="24" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
 <text x="95" y="285" font-family="Arial" font-size="22" font-weight="700" fill="#dc2626">2012</text><text x="95" y="345" font-family="Arial" font-size="34" font-weight="800" fill="#0f172a">Implicit flow</text><text x="95" y="392" font-family="Arial" font-size="23" fill="#475569">Tokens returned through the browser</text>
