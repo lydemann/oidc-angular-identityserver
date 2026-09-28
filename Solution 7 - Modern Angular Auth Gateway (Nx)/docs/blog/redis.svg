@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="65" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#0f172a">Auth Gateway replicas with Redis</text>
+  
+  <rect x="55" y="150" width="210" height="170" rx="18" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="160" y="210" text-anchor="middle" font-family="Arial" font-size="25" font-weight="700" fill="#2563eb">Browser</text>
+  <text x="160" y="250" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">HttpOnly session</text>
+  <rect x="370" y="110" width="280" height="250" rx="18" fill="#dbeafe" stroke="#60a5fa" stroke-width="2"/>
+  <text x="510" y="160" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#1d4ed8">Auth Gateway replicas</text>
+  <text x="510" y="215" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">replica 1</text><text x="510" y="250" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">replica 2</text><text x="510" y="285" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">replica 3</text>
+  <rect x="745" y="105" width="190" height="120" rx="18" fill="#fef2f2" stroke="#f87171" stroke-width="2"/>
+  <text x="840" y="155" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#dc2626">Redis</text><text x="840" y="190" text-anchor="middle" font-family="Arial" font-size="16" fill="#475569">sessions + OAuth tx</text>
+  <rect x="745" y="280" width="190" height="120" rx="18" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+  <text x="840" y="330" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#15803d">Internal APIs</text><text x="840" y="365" text-anchor="middle" font-family="Arial" font-size="16" fill="#475569">access token</text>
+  <rect x="990" y="190" width="165" height="125" rx="18" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="1072" y="235" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#c2410c">Authorization</text><text x="1072" y="268" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#c2410c">server</text>
+  <line x1="265" y1="235" x2="365" y2="235" stroke="#2563eb" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="650" y1="165" x2="740" y2="165" stroke="#dc2626" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="650" y1="340" x2="740" y2="340" stroke="#16a34a" stroke-width="4" marker-end="url(#a)"/>
+  <line x1="935" y1="252" x2="985" y2="252" stroke="#f97316" stroke-width="4" marker-end="url(#a)"/>
+  <text x="600" y="465" text-anchor="middle" font-family="Arial" font-size="20" font-weight="700" fill="#0f172a">Shared session state lets any replica handle the next request.</text>
+</svg>

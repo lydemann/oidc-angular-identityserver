@@ -1,0 +1,29 @@
+{
+  "name": "shell",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/shell/src",
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{options.outputPath.base}"],
+      "options": {
+        "outputPath": { "base": "dist/apps/shell" },
+        "index": "apps/shell/src/index.html",
+        "browser": "apps/shell/src/main.ts",
+        "tsConfig": "apps/shell/tsconfig.app.json",
+        "styles": ["apps/shell/src/styles.css"]
+      }
+    },
+    "serve": {
+      "executor": "@angular/build:dev-server",
+      "dependsOn": [
+        { "projects": ["auth-gateway"], "target": "serve" }
+      ],
+      "options": {
+        "buildTarget": "shell:build",
+        "port": 4200
+      }
+    }
+  }
+}

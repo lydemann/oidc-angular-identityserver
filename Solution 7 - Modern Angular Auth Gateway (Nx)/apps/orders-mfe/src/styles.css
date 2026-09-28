@@ -1,0 +1,4 @@
+body { margin: 0; font-family: system-ui, sans-serif; background: #eef2f6; color: #171717; }
+main { max-width: 760px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 14px; }
+pre { padding: 1rem; overflow: auto; background: #111; color: #eee; border-radius: 8px; }
+button, a { font: inherit; }

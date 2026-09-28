@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="65" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#0f172a">Code + PKCE still leaves the access token in browser JavaScript</text>
+  
+  <rect x="410" y="140" width="380" height="220" rx="20" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="600" y="195" text-anchor="middle" font-family="Arial" font-size="29" font-weight="700" fill="#2563eb">Angular SPA</text>
+  <rect x="500" y="235" width="200" height="70" rx="14" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+  <text x="600" y="278" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#c2410c">access token</text>
+  <rect x="60" y="150" width="260" height="85" rx="16" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/><text x="190" y="185" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#dc2626">XSS / unsafe sink</text>
+  <rect x="60" y="270" width="260" height="85" rx="16" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/><text x="190" y="305" text-anchor="middle" font-family="Arial" font-size="21" font-weight="700" fill="#dc2626">Third-party code</text>
+  <rect x="875" y="125" width="270" height="260" rx="20" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+  <text x="1010" y="170" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#15803d">Reduce attack surface</text>
+  <text x="1010" y="215" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">CSP + Trusted Types</text>
+  <text x="1010" y="250" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">Angular sanitization</text>
+  <text x="1010" y="285" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">avoid unsafe DOM sinks</text>
+  <text x="1010" y="320" text-anchor="middle" font-family="Arial" font-size="17" fill="#475569">HTTPS + HSTS</text>
+  <text x="600" y="445" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#0f172a">These defenses reduce risk, but a JavaScript-readable bearer token remains readable.</text>
+</svg>

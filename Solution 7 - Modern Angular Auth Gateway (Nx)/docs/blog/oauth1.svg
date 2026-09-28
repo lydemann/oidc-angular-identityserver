@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#475569"/></marker></defs>
+  <rect width="1200" height="520" rx="24" fill="#f8fafc"/>
+  <text x="60" y="65" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#0f172a">OAuth 1.0: signed delegated requests</text>
+  
+  <rect x="70" y="140" width="280" height="220" rx="20" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="210" y="195" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#c2410c">Consumer app</text>
+  <text x="210" y="245" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">temporary credentials</text>
+  <text x="210" y="282" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">authorization</text>
+  <text x="210" y="319" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">token credentials</text>
+  <rect x="850" y="140" width="280" height="220" rx="20" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+  <text x="990" y="195" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#15803d">Service / API</text>
+  <text x="990" y="250" text-anchor="middle" font-family="Arial" font-size="19" fill="#475569">verifies request signature</text>
+  <line x1="350" y1="250" x2="845" y2="250" stroke="#16a34a" stroke-width="4" marker-end="url(#a)"/>
+  <text x="600" y="220" text-anchor="middle" font-family="Arial" font-size="22" font-weight="700" fill="#15803d">signed request</text>
+  <text x="600" y="285" text-anchor="middle" font-family="Arial" font-size="18" fill="#475569">token + nonce + timestamp + signature</text>
+  <text x="600" y="440" text-anchor="middle" font-family="Arial" font-size="24" font-weight="700" fill="#0f172a">Strong request binding, but more protocol and signing complexity.</text>
+</svg>
